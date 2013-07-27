@@ -65,13 +65,13 @@
     <IncludePath>G:\workspaces\C++Projects\TDRacer\TDRacer\libs\SDLDev\include;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\MixerDev\include;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\ImageDev\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>G:\workspaces\C++Projects\TDRacer\TDRacer\libs\SDLDev\include;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\MixerDev\include;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\ImageDev\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\libs\SDLDev\include;$(SolutionDir)\libs\MixerDev\include;$(SolutionDir)\libs\ImageDev\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>G:\workspaces\C++Projects\TDRacer\TDRacer\libs\SDLDev\lib\x64;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\MixerDev\lib\x64;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\ImageDev\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>G:\workspaces\C++Projects\TDRacer\TDRacer\libs\SDLDev\lib\x64;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\MixerDev\lib\x64;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\ImageDev\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\libs\SDLDev\lib\x64libs;$(SolutionDir)\libs\MixerDev\lib\x64libs;$(SolutionDir)\libs\ImageDev\lib\x64libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -96,9 +96,9 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(SolutionDir)\libs\ImageDev\lib\x64\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
-xcopy /y "$(SolutionDir)\libs\MixerDev\lib\x64\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
-xcopy /y "$(SolutionDir)\libs\SDLDev\lib\x64\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
+      <Command>xcopy /y "$(SolutionDir)\libs\ImageDev\lib\x64libs\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
+xcopy /y "$(SolutionDir)\libs\MixerDev\lib\x64libs\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
+xcopy /y "$(SolutionDir)\libs\SDLDev\lib\x64libs\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
 </Command>
     </PostBuildEvent>
     <PostBuildEvent>
