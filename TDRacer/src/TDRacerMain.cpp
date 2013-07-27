@@ -13,7 +13,7 @@ int main(int argc, char* args[])
 	SDL_Delay( 2000 );
 
 	//Quit SDL 
-	SDL_Quit(); 
+	SDL_Quit();  
 	
 	return 0; 
 }
