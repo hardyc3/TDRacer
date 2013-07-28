@@ -1,4 +1,4 @@
-#include "SDL.h"
+#include "TDRacerMain.h"
 
 int main(int argc, char* args[]) 
 {
@@ -7,10 +7,20 @@ int main(int argc, char* args[])
 	
 	SDL_Window* screen = NULL;
 	//Set up screen 
-	screen = SDL_CreateWindow("TDRacer", 100, 100, 640, 480, SDL_SWSURFACE );
+	screen = SDL_CreateWindow(SCREEN_TITLE, SCREEN_X, SCREEN_Y, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_SWSURFACE );
 
-	//Pause 
-	SDL_Delay( 2000 );
+	SDL_Event sdlEvent;
+	bool quit = false;
+	while(quit == false)
+	{
+		while(SDL_PollEvent(&sdlEvent))
+		{
+			if(sdlEvent.type == SDL_QUIT)
+			{
+				quit = true;
+			}
+		}
+	}
 
 	//Quit SDL 
 	SDL_Quit();  

@@ -13,10 +13,63 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Animation">
+      <UniqueIdentifier>{0b538ccf-ae46-4b55-9ea4-a13009a56fca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animation">
+      <UniqueIdentifier>{1c7160b1-c680-43a1-b715-33dca9fa8661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Displayable">
+      <UniqueIdentifier>{7819a21a-d74f-4820-8f11-e89a40179aa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Displayable">
+      <UniqueIdentifier>{872048b9-272f-4207-8b3e-5b9b1f548ea4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\TDRacerMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animatable.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animator.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Car.cpp">
+      <Filter>Source Files\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Track.cpp">
+      <Filter>Source Files\Displayable</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Animatable.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Animator.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Car.h">
+      <Filter>Header Files\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Track.h">
+      <Filter>Header Files\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\TDRacerMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

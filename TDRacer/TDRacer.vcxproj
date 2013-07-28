@@ -71,7 +71,7 @@
     <LibraryPath>G:\workspaces\C++Projects\TDRacer\TDRacer\libs\SDLDev\lib\x64;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\MixerDev\lib\x64;G:\workspaces\C++Projects\TDRacer\TDRacer\libs\ImageDev\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>$(SolutionDir)\libs\SDLDev\lib\x64libs;$(SolutionDir)\libs\MixerDev\lib\x64libs;$(SolutionDir)\libs\ImageDev\lib\x64libs;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\libs\SDLDev\lib\x64lib;$(SolutionDir)\libs\MixerDev\lib\x64lib;$(SolutionDir)\libs\ImageDev\lib\x64lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -89,6 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>G:\workspaces\C++Projects\TDRacer\TDRacer\header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -96,9 +97,9 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(SolutionDir)\libs\ImageDev\lib\x64libs\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
-xcopy /y "$(SolutionDir)\libs\MixerDev\lib\x64libs\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
-xcopy /y "$(SolutionDir)\libs\SDLDev\lib\x64libs\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
+      <Command>xcopy /y "$(SolutionDir)\libs\ImageDev\lib\x64lib\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
+xcopy /y "$(SolutionDir)\libs\MixerDev\lib\x64lib\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
+xcopy /y "$(SolutionDir)\libs\SDLDev\lib\x64lib\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\"
 </Command>
     </PostBuildEvent>
     <PostBuildEvent>
@@ -132,7 +133,22 @@ xcopy /y "$(SolutionDir)\libs\SDLDev\lib\x64libs\*.dll" "$(SolutionDir)$(Platfor
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Animatable.cpp" />
+    <ClCompile Include="src\Animator.cpp" />
+    <ClCompile Include="src\Car.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\TDRacerMain.cpp" />
+    <ClCompile Include="src\Track.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\Animatable.h" />
+    <ClInclude Include="header\Animator.h" />
+    <ClInclude Include="header\Car.h" />
+    <ClInclude Include="header\Game.h" />
+    <ClInclude Include="header\Player.h" />
+    <ClInclude Include="Header\TDRacerMain.h" />
+    <ClInclude Include="header\Track.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
