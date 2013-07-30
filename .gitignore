@@ -39,8 +39,6 @@ local.properties
 # User-specific files
 *.user
 *.sln.docstates
-*.suo
-*.vcxproj
 
 # Build results
 
@@ -59,12 +57,10 @@ build/
 *_p.c
 *.ilk
 *.meta
-*.obj
 *.pch
 *.pdb
 *.pgc
 *.pgd
-*.rsp
 *.sbr
 *.tlb
 *.tli
