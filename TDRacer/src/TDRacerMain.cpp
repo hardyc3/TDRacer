@@ -1,7 +1,11 @@
 #include "TDRacerMain.h"
+#include <boost\chrono\chrono.hpp>
+
+using namespace boost::chrono;
 
 int main(int argc, char* args[]) 
 {
+	microseconds(25);
 	//Start SDL 
 	SDL_Init( SDL_INIT_EVERYTHING ); 
 	
