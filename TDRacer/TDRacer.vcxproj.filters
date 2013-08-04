@@ -48,6 +48,15 @@
     <ClCompile Include="src\Track.cpp">
       <Filter>Source Files\Displayable</Filter>
     </ClCompile>
+    <ClCompile Include="src\Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ServerData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Game.h">
@@ -69,6 +78,18 @@
       <Filter>Header Files\Displayable</Filter>
     </ClInclude>
     <ClInclude Include="Header\TDRacerMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ServerData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
