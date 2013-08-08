@@ -21,17 +21,20 @@ Animator::~Animator()
 	delete front;
 }
 
-void Animator::displayOn(SDL_Surface* toDisplayOn) 
+void Animator::renderTo(SDL_Renderer *toRenderOn)
 {
 	list<Animatable*>::iterator animatableIter = animatableList.begin();
 	list<Animatable*>::iterator animatableIterEnd = animatableList.end();
 
-	if(animatableIter != animatableIterEnd)
+	while(animatableIter != animatableIterEnd)
 	{
-		//Animatable* item = animatableIter._Ptr;
-		//while(animatableIter != animatableList.end())
-		{
-		//	animatableIter.
-		}
+		SDL_Rect offset;
+		offset.x = (*animatableIter)->getAnimatableImage()->getX();
+		offset.y = (*animatableIter)->getAnimatableImage()->getY();
+		offset.h = (*animatableIter)->getAnimatableImage()->getHeight();
+		offset.w = (*animatableIter)->getAnimatableImage()->getWidth();
+
+		
+		animatableIter++;
 	}
 }

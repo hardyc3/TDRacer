@@ -9,5 +9,5 @@ private:
 public:
 	Animator();
 	~Animator();
-	void displayOn(SDL_Surface *toDisplayOn);
+	void renderTo(SDL_Renderer *toRenderOn);
 };

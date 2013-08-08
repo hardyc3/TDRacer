@@ -32,7 +32,12 @@ public:
 		return height;
 	}
 
-	int getWidth() 
+	int getWidth()
+	{
+		return width;
+	}
+
+	int getAnimatableImage() 
 	{
 		return width;
 	}

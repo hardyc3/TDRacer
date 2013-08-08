@@ -10,4 +10,14 @@ public:
 	Animatable();
 	~Animatable();
 	void animateOn(Image *toAnimateOn);
+
+	Image* getAnimatableImage()
+	{
+		return animatableImage;
+	}
+
+	int getFrameRate()
+	{
+		return frameRate;
+	}
 };

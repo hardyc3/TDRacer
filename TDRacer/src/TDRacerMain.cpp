@@ -1,4 +1,5 @@
 #include "TDRacerMain.h"
+#include "Animator.h"
 
 int main(int argc, char* args[]) 
 {
@@ -8,12 +9,20 @@ int main(int argc, char* args[])
 		return 1; //there was an sdl error
 	}
 	
-	SDL_Window* screen = NULL;
+	Animator animator;
+	SDL_Window* window = NULL;
+	SDL_Renderer* renderer = NULL;
 	//Set up screen 
-	screen = SDL_CreateWindow(SCREEN_TITLE, SCREEN_X, SCREEN_Y, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_SWSURFACE );
-	if(screen == NULL)
+	window = SDL_CreateWindow(SCREEN_TITLE, SCREEN_X, SCREEN_Y, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_SWSURFACE );
+	if(window == NULL)
 	{
 		return 1; //couldn't create window
+	}
+
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	if(renderer == NULL)
+	{
+		return 1;
 	}
 		
 	SDL_Event sdlEvent;
@@ -28,14 +37,13 @@ int main(int argc, char* args[])
 			}
 		}
 
-		SDL_Surface* windowSurface = SDL_GetWindowSurface(screen);
-
-		
-				
-		SDL_UpdateWindowSurface(screen);
+		SDL_RenderClear(renderer);
+		animator.renderTo(renderer);
+		SDL_RenderPresent(renderer);
 	}
 
-	SDL_DestroyWindow(screen);
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
 
 	//Quit SDL 
 	SDL_Quit();  
