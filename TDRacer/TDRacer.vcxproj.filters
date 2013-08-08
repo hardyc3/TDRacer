@@ -48,14 +48,11 @@
     <ClCompile Include="src\Track.cpp">
       <Filter>Source Files\Displayable</Filter>
     </ClCompile>
-    <ClCompile Include="src\Client.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\StaticSurface.cpp">
+      <Filter>Source Files\Animation</Filter>
     </ClCompile>
-    <ClCompile Include="src\Server.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ServerData.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Image.cpp">
+      <Filter>Source Files\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,17 +77,11 @@
     <ClInclude Include="Header\TDRacerMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\Client.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="header\StaticSurface.h">
+      <Filter>Header Files\Animation</Filter>
     </ClInclude>
-    <ClInclude Include="header\includes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="header\Server.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="header\ServerData.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="header\Image.h">
+      <Filter>Header Files\Animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
