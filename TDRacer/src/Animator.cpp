@@ -28,12 +28,7 @@ void Animator::renderTo(SDL_Renderer *toRenderOn)
 
 	while(animatableIter != animatableIterEnd)
 	{
-		SDL_Rect offset;
-		offset.x = (*animatableIter)->getAnimatableImage()->getX();
-		offset.y = (*animatableIter)->getAnimatableImage()->getY();
-		offset.h = (*animatableIter)->getAnimatableImage()->getHeight();
-		offset.w = (*animatableIter)->getAnimatableImage()->getWidth();
-
+		(*animatableIter)->animateOn(toRenderOn);
 		
 		animatableIter++;
 	}

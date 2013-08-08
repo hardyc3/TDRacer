@@ -11,13 +11,10 @@ StaticSurface::~StaticSurface()
 	staticImage = NULL;
 }
 
-void StaticSurface::displayOn(Image *toDisplayOn)
+void StaticSurface::displayOn(SDL_Renderer* renderer)
 {
-	SDL_Rect offset;
-	offset.x = staticImage->getX();
-	offset.y = staticImage->getY();
-	offset.h = staticImage->getHeight();
-	offset.w = staticImage->getWidth();
+	SDL_Rect* clipping = staticImage->getClipRect();
+	SDL_Rect* position = staticImage->getPositionRect();
 
-	SDL_BlitSurface(staticImage->getSurface(), NULL, toDisplayOn->getSurface(), &offset);
+	SDL_RenderCopy(renderer, staticImage->getTexture(), clipping, position);
 }

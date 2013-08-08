@@ -9,7 +9,7 @@ private:
 public:
 	Animatable();
 	~Animatable();
-	void animateOn(Image *toAnimateOn);
+	void animateOn(const SDL_Renderer* renderer);
 
 	Image* getAnimatableImage()
 	{

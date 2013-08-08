@@ -8,6 +8,6 @@ Animatable::~Animatable()
 {
 }
 
-void Animatable::animateOn(Image *toAnimateOn)
+void Animatable::animateOn(const SDL_Renderer *toAnimateOn)
 {
 }

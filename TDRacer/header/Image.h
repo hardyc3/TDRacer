@@ -6,43 +6,26 @@ using namespace std;
 
 class Image {
 private:
-	SDL_Surface *image;
-	int width;
-	int height;
-	int x; 
-	int y;
+	SDL_Texture *image;
+	SDL_Rect* clipRect; //which part of the image to use
+	SDL_Rect* positionRect; //where the image should be displayed
 
 public:
 	Image();
 	~Image();
-	void loadImage(string filePath);
+	void loadImage(SDL_Renderer* renderer, const string filePath);
 
-	int getX()
+	SDL_Rect* getClipRect()
 	{
-		return x;
+		return clipRect;
 	}
 
-	int getY()
+	SDL_Rect* getPositionRect()
 	{
-		return y;
+		return positionRect;
 	}
 
-	int getHeight()
-	{
-		return height;
-	}
-
-	int getWidth()
-	{
-		return width;
-	}
-
-	int getAnimatableImage() 
-	{
-		return width;
-	}
-
-	SDL_Surface* getSurface() 
+	SDL_Texture* getTexture() 
 	{
 		return image;
 	}

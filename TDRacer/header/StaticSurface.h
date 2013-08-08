@@ -8,10 +8,10 @@ private:
 public:
 	StaticSurface();
 	~StaticSurface();
-	void displayOn(Image *toDisplayOn);
+	void displayOn(SDL_Renderer* renderer);
 
-	SDL_Surface* getSurface() 
+	SDL_Texture* getTexture() 
 	{
-		return staticImage->getSurface();
+		return staticImage->getTexture();
 	}
 };

@@ -10,4 +10,7 @@ public:
 	Animator();
 	~Animator();
 	void renderTo(SDL_Renderer *toRenderOn);
+	void addToRenderList(Animatable* toAddToList);
+	void removeFromList(Animatable* toRemove);
+
 };
