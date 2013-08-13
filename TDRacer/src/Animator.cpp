@@ -8,17 +8,14 @@ Animator::Animator()
 
 Animator::~Animator()
 {
-	Animatable* front = animatableList.front();
-	Animatable* curr = animatableList.back();
-	while(curr != front)
+	list<Animatable*>::iterator animatableIter = animatableList.begin();
+	list<Animatable*>::iterator animatableIterEnd = animatableList.end();
+	while(animatableIter != animatableIterEnd)
 	{
-		delete curr;
-		curr = NULL;
-		animatableList.pop_back();
-		curr = animatableList.back();
+		delete *animatableIter;
+		*animatableIter = NULL;
+		animatableIter++;
 	}
-
-	delete front;
 }
 
 void Animator::renderTo(SDL_Renderer *toRenderOn)
@@ -33,3 +30,14 @@ void Animator::renderTo(SDL_Renderer *toRenderOn)
 		animatableIter++;
 	}
 }
+
+void Animator::addToRenderList(Animatable* toAddToList)
+{
+	animatableList.push_back(toAddToList);
+}
+
+void Animator::removeFromList(Animatable* toRemove)
+{
+	animatableList.remove(toRemove);
+}
+

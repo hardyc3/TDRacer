@@ -1,5 +1,7 @@
 #pragma once 
 #include "Image.h"
+#include <string>
+#include "SDL.h"
 
 class Animatable {
 private:
@@ -9,7 +11,8 @@ private:
 public:
 	Animatable();
 	~Animatable();
-	void animateOn(const SDL_Renderer* renderer);
+	void animateOn(SDL_Renderer* renderer);
+	void loadImage(SDL_Renderer* renderer, string imageFile);
 
 	Image* getAnimatableImage()
 	{
