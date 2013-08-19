@@ -3,24 +3,18 @@
 #include <string>
 
 enum TRACKS {
-	BASIC_TRACK
+	BASIC_TRACK = 0
 };
 
 const string Tracks[]={
 	"sprites/track1.png"
 };
 
-class Track {
+class Track : public StaticSurface {
 private:
-	StaticSurface* track;
 
 public: 
 	Track();
 	~Track();
-	void loadTrack(TRACKS pickedTrack);
 
-	StaticSurface getTrack()
-	{
-		return track;
-	}
 };

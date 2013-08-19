@@ -31,7 +31,12 @@ void Image::loadImage(SDL_Renderer* renderer, const string filePath)
 
 	if(loadedImage != NULL)
 	{
+		Uint32 colorKey = SDL_MapRGB(loadedImage->format, 0, 0, 0);
+		
+		SDL_SetColorKey(loadedImage, SDL_TRUE, colorKey);
+
 		image = SDL_CreateTextureFromSurface(renderer, loadedImage);
+
 		SDL_FreeSurface(loadedImage);
 	}
 }

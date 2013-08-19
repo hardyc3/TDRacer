@@ -1,5 +1,6 @@
 #include "TDRacerMain.h"
 #include "Animator.h"
+#include "Game.h"
 
 int main(int argc, char* args[]) 
 {
@@ -24,16 +25,28 @@ int main(int argc, char* args[])
 	{
 		return 1;
 	}
-		
+	
+	Game game;
+
 	SDL_Event sdlEvent;
 	bool quit = false;
 	while(quit == false)
 	{
+		if(!game.isSetup())
+		{
+			game.displayMenu();
+		}
+
 		while(SDL_PollEvent(&sdlEvent))
 		{
 			if(sdlEvent.type == SDL_QUIT)
 			{
 				quit = true;
+			}
+			else if(sdlEvent.type == SDL_KEYDOWN ||
+				sdlEvent.type == SDL_KEYUP)
+			{
+				game.handleKeyboardEvent(sdlEvent);
 			}
 		}
 

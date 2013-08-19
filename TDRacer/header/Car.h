@@ -1,19 +1,14 @@
 #pragma once
 #include "Animatable.h"
 
-class Car {
+class Car : public Animatable {
 private: 
-	Animatable carImage;
 	int speed;
 	float acceleration;
 	float turningRadius;
 	float turningSpeed;
 
 public:
-
-	Animatable getCarImage()
-	{
-		return carImage;
-	}
-
+	Car();
+	~Car();
 };
