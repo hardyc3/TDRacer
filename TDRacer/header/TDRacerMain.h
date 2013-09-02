@@ -1,4 +1,5 @@
 #include "SDL.h"
+#include "SDL_ttf.h"
 
 const int SCREEN_WIDTH = 1042;
 const int SCREEN_HEIGHT = 690;

@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "SDL.h"
 
-Game::Game() : players(), track(), playersSetup(false), networkSetup(false), gameReady(false)
+Game::Game() : players(), track(), gameState(MENU)
 {
 }
 
@@ -31,9 +31,10 @@ void Game::setupGame()
 
 void Game::displayMenu()
 {
+	
 }
 
-bool Game::isSetup()
+GAME_STATE Game::getState()
 {
-	return playersSetup && networkSetup && gameReady;
+	return gameState;
 }

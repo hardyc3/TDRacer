@@ -10,6 +10,11 @@ int main(int argc, char* args[])
 		return 1; //there was an sdl error
 	}
 	
+	if(TTF_Init() == -1)
+	{
+		return 1; //there was a ttf error
+	}
+
 	Animator animator;
 	SDL_Window* window = NULL;
 	SDL_Renderer* renderer = NULL;
@@ -32,11 +37,15 @@ int main(int argc, char* args[])
 	bool quit = false;
 	while(quit == false)
 	{
-		if(!game.isSetup())
+		if(game.getState() == MENU)
 		{
 			game.displayMenu();
 		}
-
+		else if(game.getState() == PLAYER_MENU || game.getState() == NETWORK_MENU)
+		{
+			game.setupGame();
+		}
+		
 		while(SDL_PollEvent(&sdlEvent))
 		{
 			if(sdlEvent.type == SDL_QUIT)
@@ -47,6 +56,11 @@ int main(int argc, char* args[])
 				sdlEvent.type == SDL_KEYUP)
 			{
 				game.handleKeyboardEvent(sdlEvent);
+			}
+			else if(sdlEvent.type == SDL_MOUSEBUTTONDOWN ||
+				sdlEvent.type == SDL_MOUSEBUTTONUP)
+			{
+				game.handleMouseEvent(sdlEvent);
 			}
 		}
 
